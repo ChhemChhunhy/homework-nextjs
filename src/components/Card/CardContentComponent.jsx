@@ -1,24 +1,23 @@
-import React from 'react';
 
-const CardContentComponent = () => {
-  return ( 
-    <>
-    <div className="card w-96 bg-base-100 shadow-xl">
-  <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-  <div className="card-body">
-    <h2 className="card-title">
-      Shoes!
-      <div className="badge badge-secondary">NEW</div>
-    </h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div className="card-actions justify-end">
-      <div className="badge badge-outline">Fashion</div> 
-      <div className="badge badge-outline">Products</div>
+'use client';
+
+import { Card } from 'flowbite-react';
+import { FaPencil } from "react-icons/fa6";
+
+
+export default function CardContentComponent() {
+  return (
+    <Card
+      className="w-72"
+      renderImage={() => <img className='rounded' width={500} height={500} src="https://api.istad.co/media/image/eec0362f-380e-40f5-8799-56ca9b8cafb9.png" alt="image 1" />}
+    >
+    <div className='flex justify-between'>
+      <span className='flex text-sm items-center gap-2'><FaPencil />Job Anounments</span>
+      <p className='text-sm'>12 April 2023</p>
     </div>
-  </div>
-</div>
-    </>
+      <p className="font-normal text-gray-700 dark:text-gray-400">
+        Here Job Anounments
+      </p>
+    </Card>
   );
 }
-
-export default CardContentComponent;

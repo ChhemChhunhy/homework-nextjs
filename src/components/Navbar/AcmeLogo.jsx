@@ -1,6 +1,6 @@
 import React from "react";
 export const AcmeLogo = () => (
-    <img src="https://istad.co/resources/img/CSTAD_120.png" alt="" className="h-10" />
+     <img src="https://istad.co/resources/img/CSTAD_120.png" alt="" className="h-10" />
 //   <svg fill="none" height="36" viewBox="0 0 32 32" width="36">
 //     <path
 //       clipRule="evenodd"

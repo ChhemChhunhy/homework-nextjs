@@ -1,98 +1,32 @@
-import React from "react";
-import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
-import {AcmeLogo} from "./AcmeLogo.jsx";
+
+'use client';
+
+import Link from 'next/link';
+import { Navbar } from 'flowbite-react';
 
 export default function NavbarComponent() {
-  const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
-
   return (
-    <Navbar disableAnimation isBordered>
-      <NavbarContent className="sm:hidden" justify="start">
-        <NavbarMenuToggle />
-      </NavbarContent>
-
-      <NavbarContent className="sm:hidden pr-3" justify="center">
-        <NavbarBrand>
-          <AcmeLogo />
-          <p className="font-bold text-inherit">CSTAD</p>
-        </NavbarBrand>
-      </NavbarContent>
-
-      <NavbarContent className="hidden sm:flex gap-6" justify="center">
-        <NavbarBrand>
-          <AcmeLogo />
-          <p className="font-bold text-inherit  xl:mx-5">CSTAD</p>
-        </NavbarBrand>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-             Home
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Enroll
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Coures
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-           IT News
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page" color="warning">
-            Jop Opportunity
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-           About Us
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="warning" href="#" variant="flat">
-            Sign Up
-          </Button>
-        </NavbarItem>
-      </NavbarContent>
-
-      <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              className="w-full"
-              color={
-                index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
-              }
-              href="#"
-              size="lg"
-            >
-              {item}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
+  <section className='xl:max-w-screen-2xl mx-auto xl:px-16 bg-blue-800'>
+    <Navbar fluid rounded className='bg-blue-800'>
+      <Navbar.Brand as={Link} href="https://flowbite-react.com">
+        <img src="https://istad.co/resources/img/CSTAD_120.png" className="mr-3 h-7 sm:h-12" alt="Flowbite React Logo" />
+        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white text-white ">CSTAD</span>
+      </Navbar.Brand>
+      <Navbar.Toggle />
+      <Navbar.Collapse >
+        <Navbar.Link href="/"  className='text-lg xl:mr-5 text-white'>
+          Home
+        </Navbar.Link>
+        <Navbar.Link as={Link} href="/enroll" className='text-lg xl:mr-5 text-white'>
+          Enroll
+        </Navbar.Link>
+        
+        <Navbar.Link href="/courses" className='text-lg xl:mr-5 text-white'>Courses</Navbar.Link>
+        <Navbar.Link href="/it-new" className='text-lg xl:mr-5 text-white'>IT News</Navbar.Link>
+        <Navbar.Link href="/opportunity" className='text-lg xl:mr-5 text-white'>Job Opportunity</Navbar.Link>
+        <Navbar.Link href="/about" className='text-lg text-white'>About Us</Navbar.Link>
+      </Navbar.Collapse>
     </Navbar>
+  </section>
   );
 }

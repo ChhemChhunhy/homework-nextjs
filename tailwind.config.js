@@ -6,6 +6,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+    'node_modules/flowbite-react/lib/esm/**/*.js',
   ],
   theme: {
     extend: {
@@ -16,7 +17,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("daisyui"),
+  plugins: [
+  require('flowbite/plugin'),
   nextui()
 
 ],
